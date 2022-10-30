@@ -27,4 +27,4 @@ jobs:
 
       - uses: jpadams/js-shim-dagger-go-action@main
         with:
-          whoToGreet: "Dagger"
+          who-to-greet: "Dagger"
