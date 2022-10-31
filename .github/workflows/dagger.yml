@@ -17,6 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set who to greet
+        id: who-to-greet
+        run: |
+          USER_INPUT=${{ github.event.inputs.who-to-greet }}
+          echo "::set-output name=value::${USER_INPUT:-"Dagger Go SDK"}"
+
       - uses: jpadams/js-shim-dagger-go-action@main
         with:
-          who-to-greet: ${{ github.event.inputs.who-to-greet }}
+          who-to-greet: ${{ steps.who-to-greet.outputs.value }}
