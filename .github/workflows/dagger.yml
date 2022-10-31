@@ -32,4 +32,4 @@ jobs:
 
       - uses: jpadams/js-shim-dagger-go-action@main
         with:
-          who-to-greet: "Dagger Go SDK"
+          who-to-greet: ${{ github.event.inputs.who-to-greet }}
